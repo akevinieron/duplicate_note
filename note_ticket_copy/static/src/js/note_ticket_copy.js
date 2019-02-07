@@ -1,5 +1,6 @@
 odoo.define('pos_print_note_ticket', function (require) {
     var models = require('point_of_sale.models');
+    var core = require('web.core');
     var QWeb = core.qweb;
 
     var _super_order = models.Order.prototype;
