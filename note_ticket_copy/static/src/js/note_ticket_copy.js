@@ -1,9 +1,10 @@
 odoo.define('pos_print_note_ticket', function (require) {
     var models = require('point_of_sale.models');
 
+    var _super_order = models.Order.prototype;
     models.Order = models.Order.extend({
         printChanges: function(){
-            this._super();
+            _super_order.printChanges.apply(this, arguments);
             var printers = this.pos.printers;
             for(var i = 0; i < printers.length; i++){
                 var changes = this.computeChanges(printers[i].config.product_categories_ids);
