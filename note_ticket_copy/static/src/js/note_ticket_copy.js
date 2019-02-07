@@ -10,7 +10,7 @@ odoo.define('pos_print_note_ticket', function (require) {
             var printers = this.pos.printers;
             for(var i = 0; i < printers.length; i++){
                 var changes = this.computeChanges(printers[i].config.product_categories_ids);
-                if ( changes['new'].length > 0 || changes['cancelled'].length > 0){
+                if ( changes['new'].length > 0 ){
                     var receipt = QWeb.render('OrderChangeReceiptCopy',{changes:changes, widget:this});
                     printers[i].print(receipt);
                 }
