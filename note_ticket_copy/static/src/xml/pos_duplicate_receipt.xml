@@ -16,7 +16,7 @@
                 <div><span><t t-esc="changes.floor" /></span> / <span bold='on' size='double'><t t-esc="changes.table"/></span></div>
             </t>
             <br />
-            <div bold='on' size='double'> ***** COPIA ***** COPIA ***** COPIA ***** </div>
+            <div bold='on' size='double'> ****** COPIA ****** </div>
             <br />
             <br />
             <t t-if="changes.cancelled.length > 0">
@@ -64,7 +64,7 @@
                 </t>
                 <br />
                 <br />
-                <div bold='on' size='double'> ***** COPIA ***** COPIA ***** COPIA ***** </div>
+                <div bold='on' size='double'> ****** COPIA ****** </div>
                 <br />
             </t>
         </receipt>
