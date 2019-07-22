@@ -1,5 +1,6 @@
 odoo.define('pos_print_note_ticket', function (require) {
     var models = require('point_of_sale.models');
+    var screens = require('point_of_sale.screens');
     var core = require('web.core');
     var QWeb = core.qweb;
 
@@ -15,6 +16,13 @@ odoo.define('pos_print_note_ticket', function (require) {
                     printers[i].print(receipt);
                 }
             }
+        }
+    });
+    
+    screens.ReceiptScreenWidget = screens.ReceiptScreenWidget.extend({
+        show: function(){
+            this._super()
+            this.print();
         }
     });
 });
